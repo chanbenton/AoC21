@@ -1016,8 +1016,6 @@ arr.forEach(num => {
 });
 
 console.log(counter);
-// 0123456789[10][11]
-// 010111100100
 
 const gamma = parseInt('010111100100',2);
 console.log(gamma);

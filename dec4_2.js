@@ -646,11 +646,6 @@ const fillTracker = () => {
 };
 fillTracker();
 
-// console.log('nums', callNums);
-// console.log('positions', numPositions);
-// console.log('tracker', winTracker);
-// console.log('cards', allCards);
-
 const completedList = [];
 const getBingoSum = (card, num) => {
     // card.reduce sum from allCards[card]

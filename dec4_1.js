@@ -634,7 +634,7 @@ cardInput.forEach((input, row) => {
 // x2. get calling order from bingoNums
 
 const callNums = bingoNums.split(',');
-// Create win tracker: Rows 0-4, Col 0-4 (5-9), 2 diagonals (10,11) \ /
+// Create win tracker: Rows 0-4, Col 0-4 (5-9)
 const fillTracker = () => {
     let i = 0;
     console.log('all', allCards);
@@ -648,11 +648,6 @@ const fillTracker = () => {
     }
 };
 fillTracker();
-
-// console.log('nums', callNums);
-// console.log('positions', numPositions);
-// console.log('tracker', winTracker);
-// console.log('cards', allCards);
 
 const getBingoSum = (card, num) => {
     // card.reduce sum from allCards[card]
@@ -678,16 +673,10 @@ const deductAndCheck = (card, lineIndex, num) => {
 for (let num of callNums) {
     const positions = numPositions[num]; // grab all positions in arr
     // get x,y,z coords and set val to undefined
-    // reduce counter by 1 for winTrackers for y,z and if diagonal 10/11
-    console.log(num, 'pos', positions);
     positions.forEach(coord => {
-        console.log('coord', coord);
         const [card, row, col] = coord.split(" ");
-        console.log(card, row, col);
         allCards[card][row][col] = undefined;
         deductAndCheck(card, row, num); // row
         deductAndCheck(card, col + 5, num); // col
-        // if (row === col) deductAndCheck(card, 10); // (0,0), (1,1)... (4,4) diagonals
-        // if (row + col === 4) deductAndCheck(card, 11); // (0,4), (1,3) ... (4,0) diagonals
     });
 }

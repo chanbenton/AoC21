@@ -588,5 +588,3 @@ const total = grid.reduce((acc, row) => {
 }, 0);
 
 console.log('total', total);
-
-// 18649 too high
